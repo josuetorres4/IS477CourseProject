@@ -203,7 +203,83 @@ There are several avenues that I can go in to extend and deepen this project suc
 5. **Robust Affordability Metrics:**  
    More nuanced affordability measures such as the share of households that would be cost burdened by median prices, or debt service ratios using typical mortgage assumptions could provide a more realistic view than a simple price to income ratio.
 
+## Reproducing 
 
+Step by step instructions you can follow:
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/josuetorres4/IS477CourseProject.git
+   cd IS477CourseProject
+
+2. You have to create and activate an environment by doing:
+python3 -m venv venv
+source venv/bin/activate
+
+3. Install the dependencies:
+For a lightweight setup, install from requirements.txt.
+For an environment that matches the exact versions used in this project, install from requirements-full.txt.
+
+4. Go to: https://uofi.box.com/s/07dilt7r1p6ejbzpx80hcggrsi4vbe5a
+Download and unzip so that you have:
+data/raw/real_estate_data_chicago.csv
+data/raw/ACS_5_Year_Data_by_Community_Area.csv
+data/cleaned/ (optional – will be regenerated)
+results/ (contains example outputs)
+
+5. Run the Workflow
+python scripts/clean_data.py
+python scripts/integrate_data.py
+python scripts/analyze_data.py
+
+clean_data.py = produces data/cleaned/real_estate_clean.csv and ACS_clean.csv
+
+integrate_data.py = produces data/cleaned/community_summary.csv
+
+analyze_data.py = produces plots and results/community_summary_with_ratios.csv
+
+## References
+
+U.S. Census Bureau. (2023).
+American Community Survey (ACS) 5-Year Estimates by Chicago Community Area.
+U.S. Department of Commerce.
+URL: https://data.census.gov/
+Accessed: 2025.
+Used to derive income distribution and demographic variables by Chicago community area. Median income was estimated using weighted income brackets.
+
+City of Chicago Department of Finance. (2023).
+Residential Real Estate Transactions – Sales.
+Chicago Data Portal.
+URL: https://data.cityofchicago.org/
+License: City of Chicago Open Data License.
+Accessed: 2025.
+Used to obtain residential property listings and sale prices for Chicago. Listings were mapped to community areas using text based extraction.
+
+Torres, J. (2025).
+Income and Housing Prices Across Chicago Community Areas (Version final-project).
+GitHub repository.
+URL: https://github.com/josuetorres4/IS477CourseProject
+Contains all scripts, documentation, and results necessary to reproduce the analysis.
+
+McKinney, W. (2010).
+Data structures for statistical computing in Python.
+Proceedings of the 9th Python in Science Conference.
+URL: https://pandas.pydata.org/
+
+Harris, C. R., et al. (2020).
+Array programming with NumPy.
+Nature, 585, 357–362.
+https://doi.org/10.1038/s41586-020-2649-2
+
+Hunter, J. D. (2007).
+Matplotlib: A 2D graphics environment.
+Computing in Science & Engineering, 9(3), 90–95.
+https://doi.org/10.1109/MCSE.2007.55
+
+Waskom, M. L. (2021).
+Seaborn: Statistical data visualization.
+Journal of Open Source Software, 6(60), 3021.
+https://doi.org/10.21105/joss.03021
 
 
 
